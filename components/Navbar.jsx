@@ -4,7 +4,7 @@ import Button from "./Button";
 const Navbar = () => {
   return (
     <div className="h-20 bg-black text-gray-400 flex items-center">
-      <div className="wrapper flex justify-between">
+      <div className="wrapper flex justify-between items-center">
         <Link href="/" className="text-white font-semibold">
           Cordemy
         </Link>
@@ -25,7 +25,7 @@ const Navbar = () => {
         </div>
 
         <div>
-          <Button href="/login" placeholder="Sign in" />
+          <Button href="/login" placeholder="Sign in" color="secondary" />
         </div>
       </div>
     </div>
