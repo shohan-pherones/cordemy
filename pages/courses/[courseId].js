@@ -38,7 +38,11 @@ const CourseDetail = ({ course }) => {
           <p className="text-3xl font-semibold">
             Price: {currencyConverter(course.price)}
           </p>
-          <Button href="/checkout" placeholder="Enroll Now" size="full" />
+          <Button
+            href={`/checkout/${course.id}`}
+            placeholder="Enroll Now"
+            size="full"
+          />
         </div>
       </div>
     </div>
