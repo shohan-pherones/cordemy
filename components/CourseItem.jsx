@@ -2,10 +2,19 @@ import { currencyConverter } from "@/utils/currencyConverter";
 import Image from "next/image";
 import { AiOutlineStar } from "react-icons/ai";
 import Button from "./Button";
+import { motion } from "framer-motion";
+import { shutterUp } from "@/utils/motion";
+import { getTransition } from "@/utils/motion";
 
 const CourseItem = ({ course }) => {
   return (
-    <div className="w-full lg:w-[30rem] shadow-md rounded-md overflow-hidden">
+    <motion.div
+      variants={shutterUp()}
+      initial="from"
+      whileInView="to"
+      transition={getTransition(0, 1)}
+      className="w-full lg:w-[30rem] shadow-md rounded-md overflow-hidden"
+    >
       <div className="w-full h-[25rem] lg:h-[20rem] overflow-hidden">
         <Image
           src={course.cover}
@@ -55,7 +64,7 @@ const CourseItem = ({ course }) => {
           <Button href={`/courses/${course.id}`} placeholder="View Details" />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
